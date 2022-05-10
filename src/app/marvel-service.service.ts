@@ -26,28 +26,28 @@ export class MarvelServiceService {
  * 
  * @returns lista de personajes de la api de marvel
  */
-  getlistadoPersonajes(): Observable<any> {
+  /*getlistadoPersonajes(): Observable<any> {
     return this.http.get<any>(this.URL_API_PERSO).pipe(map((data: any) => {
       return data.data.results;
     }));
-  }
+  }*/
 /**
  * 
  * @returns lista de comics de la api de marvel
  */
-  getListadoComics(): Observable<any> {
+  /*getListadoComics(): Observable<any> {
     return this.http.get<any>(this.URL_API_COMICS).pipe(map((data: any) =>{
         return  data.data.results;
     }));
-  }
+  }*/
   /**
    * 
    * @param data enviamos la lista de personajes a mapear al servidor
    * @returns recibimos la lista de lso personajes mapeada
    */
 
-  trasformToDTOCharacters(data: Object): Observable<any> {
-    return this.http.post(this.servidorPersonajes, data);
+  trasformToDTOCharacters(): Observable<any> {
+    return this.http.post(this.servidorPersonajes, null);
      
   }
 /**
@@ -55,8 +55,8 @@ export class MarvelServiceService {
  * @param data de los comics a mapear
  * @returns lista de comics mapeados
  */
-  trasformToDTOComics(data: Object): Observable<any> {
-    return this.http.post(this.servidorComics, data);
+  trasformToDTOComics(): Observable<any> {
+    return this.http.post(this.servidorComics, null);
      
   }
 

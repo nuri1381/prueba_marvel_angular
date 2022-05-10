@@ -68,12 +68,10 @@ export class NavbarComponent implements OnInit {
    * listado de personajes de la api de Marvel
    */
   getPersonajes() {
-    this._serviceRestService.getlistadoPersonajes().subscribe((data: any) => {
-      this._serviceRestService.trasformToDTOCharacters(data).subscribe((dataDto:any) =>{
-      this.marvelDTO = dataDto;
-      console.log(this.marvelDTO);
-      })
-    });
+    //this._serviceRestService.getlistadoPersonajes().subscribe((data: any) => {
+      this._serviceRestService.trasformToDTOCharacters().subscribe((dataDto:any) =>{
+         this.marvelDTO = dataDto;
+      });
   }
 
   /**
@@ -82,12 +80,11 @@ export class NavbarComponent implements OnInit {
    * listado de comics de la api de Marvel
    */
   getComics() {
-    this._serviceRestService.getListadoComics().subscribe((data: any) => {
-      this._serviceRestService.trasformToDTOComics(data).subscribe((dataDto:any) =>{
+    //this._serviceRestService.getListadoComics().subscribe((data: any) => {
+      this._serviceRestService.trasformToDTOComics().subscribe((dataDto:any) =>{
         this.marvelDTO = dataDto;
-        console.log(this.marvelDTO);
         })
-    });
+  // });
   }
 
 
